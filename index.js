@@ -10,8 +10,7 @@ function fetchBooks() {
     console.log(fifthBook.numberOfPages)
     console.log(data);
 
-    renderBooks(data)
-
+    
     let totalPages = 0
     data.forEach(book => {
       totalPages = totalPages + book.numberOfPages
@@ -28,6 +27,7 @@ function renderBooks(books) {
     h2.innerHTML = book.numberOfPages;
     main.appendChild(h2);
   });
+  renderBooks(data)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
