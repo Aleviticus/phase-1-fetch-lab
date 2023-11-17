@@ -7,19 +7,25 @@ function fetchBooks() {
     let keys = Object.numberofpages = data[0, 10]
     console.log(keys)
     console.log(character)
-    console.log(fifthBook)
+    console.log(fifthBook.numberOfPages)
     console.log(data);
 
     renderBooks(data)
+
+    let totalPages = 0
+    data.forEach(book => {
+      totalPages = totalPages + book.numberOfPages
+    })
+    console.log("Total number of pages:", totalPages)
   })
-  // To pass the tests, don't forget to return your fetch!
+  //To pass the tests, don't forget to return your fetch!
 }
 
 function renderBooks(books) {
   const main = document.querySelector('main');
   books.forEach(book => {
     const h2 = document.createElement('h2');
-    h2.innerHTML = book.name;
+    h2.innerHTML = book.numberOfPages;
     main.appendChild(h2);
   });
 }
@@ -27,3 +33,5 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+
+fetchBooks()
