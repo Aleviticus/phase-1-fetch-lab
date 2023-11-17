@@ -4,8 +4,6 @@ function fetchBooks() {
   .then((data) => {
     const character =data[2]
     const fifthBook = data[4]
-    let keys = Object.numberofpages = data[0, 10]
-    console.log(keys)
     console.log(character)
     console.log(fifthBook.numberOfPages)
     console.log(data);
